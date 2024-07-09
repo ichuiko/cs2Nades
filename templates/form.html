@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Создать сказку</title>
+  <link type="text/css" href="{{ url_for('static', filename='style.css')}}" rel="stylesheet" />
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="demo-page">
+  <main class="demo-page-content">
+    <section>
+      <div class="href-target" id="intro"></div>
+      <h1 class="package-name">Создай свою уникальную сказку</h1>
+      <p>
+        Заполни все поля, выбери, как будет выглядеть будущая сказка для твоего ребенка
+      </p>
+    </section>
+
+    <section>
+      <div class="href-target" id="structure"></div>
+      <h1>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+          <polygon points="12 2 2 7 12 12 22 7 12 2" />
+          <polyline points="2 17 12 22 22 17" />
+          <polyline points="2 12 12 17 22 12" />
+        </svg>
+        Какую сказку сочиняем сегодня?
+      </h1>
+    <form action="/save_data" method="post">
+      <div class="nice-form-group">
+        <label for="world">Мир, в котором будут происходить действия рассказа:</label>
+        <select id="world" name="world">
+          <option value="волшебства и чародейства Гарри Поттера">Волшебный мир Гарри Поттера</option>
+          <option value="космических пиратов">Мир космических пиратов</option>
+          <option value="благородных рыцарей и красивых принцесс">Мир благородных рыцарей и красивых принцесс</option>
+          <option value="вселенной супергероев Marvel">Вселенная комиксов Marvel</option>
+        </select>
+      </div>
+      <div class="nice-form-group">
+        <label for="moral">Мораль сказки:</label>
+        <select id="moral" name="moral">
+          <option value="о важности работы в команде, взаимной поддержке и помощи друг друга">Командная работа</option>
+          <option value="том, что необходимо правильно распоряжаться деньгами и уметь правильно их тратить и копить">Финансовая грамотность</option>
+          <option value="уважении - каждый заслуживает уважения, независимо от возраста и положения">Уважение</option>
+          <option value="том, что ребенок должен научиться помогать другим с юного возраста, даже если это совершенно незнакомый человек">Помощь ближним</option>
+        </select>
+      </div>
+      <div class="nice-form-group">
+        <label for="child_name">Имя ребенка</label>
+        <input type="text" placeholder="Сережа" id="child_name" name="child_name" />
+      </div>
+      <div class="nice-form-group">
+        <label for="child_sex">Пол ребенка:</label>
+        <select id="child_sex" name="child_sex">
+          <option value="Мальчик">Мальчик</option>
+          <option value="Девочка">Девочка</option>
+      </select>
+      </div>
+      <div class="nice-form-group">
+        <label for="child_age">Возраст ребенка:</label>
+        <input type="text" id="child_age" name="child_age" placeholder="2" />
+      </div>
+      <details>
+        <summary>
+          <button class="toggle-code" type="submit">
+            Сделать магию
+          </button>
+        </summary>
+      </details>
+    </form>  
+    </section>
+
+
+  </main>
+</div>
+<!-- partial -->
+  
+</body>
+</html>
